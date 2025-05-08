@@ -364,7 +364,17 @@ const MovieDetailPage = () => {
                           src={`https://img.youtube.com/vi/${trailer.key}/mqdefault.jpg`}
                           alt={trailer.name}
                         />
-                        <div className="movie-detail-play-icon">▶</div>
+                        <div className="movie-detail-play-icon">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="white"
+                          >
+                            <path d="M8 5v14l11-7z" />
+                          </svg>
+                        </div>
                       </div>
                       <div className="movie-detail-trailer-info">
                         <h4 className="movie-detail-trailer-name">

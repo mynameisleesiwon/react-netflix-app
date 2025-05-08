@@ -1,8 +1,7 @@
 .movie-card {
-  display: inline-block;
-  width: 200px;
+  width: 100%; /* 부모 그리드 셀에 맞추기 */
+  height: auto;
   height: 300px;
-  margin: 0 8px;
   border-radius: 6px;
   overflow: hidden;
   position: relative;

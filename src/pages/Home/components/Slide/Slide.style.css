@@ -92,32 +92,7 @@
 
 /* slick slide 스타일 (간격 없애고 width 조정) */
 .slick-slide {
-  width: calc(100% / 6) !important; /* 한 줄에 6개씩 표시 */
   padding: 0 2px;
-}
-
-@media (max-width: 1400px) {
-  .slick-slide {
-    width: calc(100% / 5) !important; /* 한 줄에 5개씩 표시 */
-  }
-}
-
-@media (max-width: 1100px) {
-  .slick-slide {
-    width: calc(100% / 4) !important; /* 한 줄에 4개씩 표시 */
-  }
-}
-
-@media (max-width: 800px) {
-  .slick-slide {
-    width: calc(100% / 3) !important; /* 한 줄에 3개씩 표시 */
-  }
-}
-
-@media (max-width: 600px) {
-  .slick-slide {
-    width: calc(100% / 2) !important; /* 한 줄에 2개씩 표시 */
-  }
 }
 
 /* 기본 화살표 숨기기 */
@@ -203,6 +178,10 @@
     width: 160px;
     height: 230px;
   }
+  .slide-title::before {
+    height: 25px;
+    top: 3px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -218,5 +197,9 @@
   .card-skeleton {
     width: 140px;
     height: 200px;
+  }
+  .slide-title::before {
+    height: 20px;
+    top: 5px;
   }
 }

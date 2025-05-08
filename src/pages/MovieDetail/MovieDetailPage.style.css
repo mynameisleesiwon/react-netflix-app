@@ -295,7 +295,6 @@
 
 .movie-detail-cast-card {
   flex: 0 0 auto;
-  width: 150px;
   background-color: rgba(20, 20, 20, 0.7);
   border-radius: 8px;
   overflow: hidden;
@@ -416,6 +415,11 @@
   color: white;
   font-size: 24px;
   transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.movie-detail-play-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: white;
 }
 .movie-detail-trailer-card:hover .movie-detail-play-icon {
   background-color: rgba(229, 9, 20, 1);
@@ -567,10 +571,6 @@
     color: #fff;
     border-left: 4px solid #e50914;
     padding-left: 10px;
-  }
-
-  .movie-detail-cast-card {
-    width: 130px;
   }
 
   .movie-detail-cast-image {

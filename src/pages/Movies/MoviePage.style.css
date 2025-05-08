@@ -15,15 +15,16 @@
   font-weight: 700;
   color: white;
   margin-bottom: 2rem;
-  text-align: center;
+  padding-left: 10px;
+
   position: relative;
-  display: inline-block;
+
   animation: fadeInUp 0.6s ease forwards;
 }
 .movie-page-title::before {
   content: '';
   position: absolute;
-  left: -15px;
+  left: 0;
   top: 10px;
   height: 35px;
   width: 5px;

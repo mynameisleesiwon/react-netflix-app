@@ -88,18 +88,60 @@
 .main-content {
 }
 
-/* 반응형 스타일링 */
-@media (max-width: 768px) {
-  .search-input {
-    width: 150px;
+/* 작은 화면용 반응형 스타일링 */
+@media (max-width: 576px) {
+  .navbar {
+    height: auto;
+    flex-direction: column;
+    padding: 10px 4%;
   }
 
+  .navbar-left {
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .navbar-right {
+    width: 100%;
+  }
+
+  .search-form {
+    width: 100%;
+  }
+
+  .search-input,
   .search-input:focus {
-    width: 180px;
+    width: 100%;
   }
 
   .logo {
-    font-size: 1.5rem;
-    margin-right: 1rem;
+    font-size: 1.3rem;
+    margin-right: 0;
+  }
+
+  .nav-links {
+    gap: 0.7rem;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+  }
+}
+
+/* 매우 작은 화면용 추가 스타일링 */
+@media (max-width: 380px) {
+  .navbar-left {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo {
+    margin-bottom: 5px;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: space-between;
   }
 }
