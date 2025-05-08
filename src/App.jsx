@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import AppLayout from './layout/AppLayout';
 import { Route, Routes } from 'react-router-dom';
-import Homepage from './pages/Home/Homepage';
+import Homepage from './pages/Home/HomePage';
 import MoviePage from './pages/Movies/MoviePage';
 import MovieDetailPage from './pages/MovieDetail/MovieDetailPage';
 import NotFoundPage from './pages/NotFound/NotFoundPage';

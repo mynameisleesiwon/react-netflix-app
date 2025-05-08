@@ -46,7 +46,7 @@
 1. 레포지토리 클론하기:
 
 ```bash
-git clone https://github.com/yourusername/netflix-demo.git
+git clone https://github.com/mynameisleesiwon/react-netflix-app.git
 cd netflix-demo
 ```
 
@@ -93,8 +93,8 @@ netflix-demo/
 │   │   │   │   ├── Banner/       # 배너 컴포넌트
 │   │   │   │   ├── Card/         # 영화 카드 컴포넌트
 │   │   │   │   └── Slide/        # 영화 슬라이드 컴포넌트
-│   │   │   └── Homepage.jsx
-│   │   │   └── Homepage.style.css
+│   │   │   └── HomePage.jsx
+│   │   │   └── HomePage.style.css
 │   │   ├── Movies/               # 영화 목록 페이지
 │   │   │   ├── components/
 │   │   │   │   ├── FilterPanel/  # 필터 패널 컴포넌트
@@ -120,7 +120,7 @@ netflix-demo/
 
 ## 🔗 데모
 
-프로젝트 라이브 데모: [Netflix Demo App](https://your-netflix-demo.vercel.app)
+프로젝트 라이브 데모: [Netflix Demo App](https://2025-siwon-react-demo.netlify.app)
 
 체험해보세요! 영화 검색, 필터링, 상세 정보 보기 등 모든 기능을 직접 사용해볼 수 있습니다.
 
