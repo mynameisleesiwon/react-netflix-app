@@ -1,0 +1,591 @@
+.movie-detail-container {
+  position: relative;
+  min-height: 100vh;
+  color: white;
+  background-color: #141414;
+}
+
+.movie-detail-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 0;
+  transition: opacity 0.5s ease, background-position 0.3s ease-out;
+}
+
+.movie-detail-backdrop-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: background 0.5s ease;
+  /* background: linear-gradient(
+    to bottom,
+    rgba(20, 20, 20, 0.7) 0%,
+    rgba(20, 20, 20, 0.8) 40%,
+    #141414 100%
+  ); */
+}
+
+.movie-detail-content {
+  position: relative;
+  padding: 70px 5% 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.movie-detail-header {
+  margin-bottom: 40px;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.movie-detail-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  transition: font-size 0.3s ease, margin 0.3s ease;
+}
+
+.movie-detail-year {
+  font-weight: 400;
+  opacity: 0.8;
+  margin-left: 10px;
+  font-size: 2rem;
+}
+
+.movie-detail-meta {
+  font-size: 1.1rem;
+  color: #e5e5e5;
+  margin-bottom: 15px;
+}
+
+.movie-detail-meta-divider {
+  margin: 0 10px;
+  opacity: 0.6;
+}
+
+.movie-detail-rating {
+  color: #ffca28;
+  font-weight: 500;
+  margin-left: 10px;
+}
+
+.movie-detail-genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.movie-detail-genre-tag {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #e5e5e5;
+}
+
+.movie-detail-overview {
+  max-width: 800px;
+}
+.movie-detail-overview h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #fff;
+}
+.movie-detail-overview p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #e5e5e5;
+}
+
+.movie-detail-loading {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #141414;
+  color: #e5e5e5;
+}
+
+.movie-detail-loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  border-top-color: #e50914;
+  animation: spin 1s ease-in-out infinite;
+  margin-bottom: 20px;
+}
+
+.movie-detail-error,
+.movie-detail-not-found {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #141414;
+  color: #e5e5e5;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.movie-detail-main {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 40px;
+  margin-bottom: 50px;
+  animation: fadeInUp 1s ease 0.2s forwards;
+  opacity: 0;
+  animation-fill-mode: both;
+}
+
+.movie-detail-poster-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.movie-detail-poster {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  transition: transfrom 0.3s ease, box-shadow 0.3s ease;
+}
+.movie-detail-poster:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+}
+
+.movie-detail-poster img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.movie-detail-companies {
+  margin-top: 20px;
+}
+.movie-detail-companies h4 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #e5e5e5;
+}
+
+.movie-detail-company-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+}
+
+.movie-detail-company {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+}
+
+.movie-detail-company img {
+  max-height: 30px;
+  max-width: 100px;
+}
+
+.movie-detail-info {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.movie-detail-info-section {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.movie-detail-info-section h3 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  color: #fff;
+  border-left: 4px solid #e50914;
+  padding-left: 10px;
+}
+
+.movie-detail-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.movie-detail-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.movie-detail-info-label {
+  font-size: 0.9rem;
+  color: #b3b3b3;
+}
+
+.movie-detail-info-value {
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+/* 모바일용 오버뷰 (데스크톱에서는 숨김) */
+.movie-detail-mobile-overview {
+  display: none;
+}
+
+.movie-detail-cast-section {
+  margin: 50px 0;
+  animation: fadeInUp 1s ease 0.6s forwards;
+  opacity: 0;
+  animation-fill-mode: both;
+}
+
+.movie-detail-section-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #fff;
+  border-left: 4px solid #e50914;
+  padding-left: 15px;
+}
+
+.movie-detail-cast-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding: 10px 0;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #e50914 #333;
+}
+
+.movie-detail-cast-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.movie-detail-cast-container::-webkit-scrollbar-track {
+  background: #333;
+  border-radius: 10px;
+}
+
+.movie-detail-cast-container::-webkit-scrollbar-thumb {
+  background: #e50914;
+  border-radius: 10px;
+}
+
+.movie-detail-cast-card {
+  flex: 0 0 auto;
+  width: 150px;
+  background-color: rgba(20, 20, 20, 0.7);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.movie-detail-cast-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+.movie-detail-cast-image {
+  width: 100%;
+  height: 225px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.movie-detail-cast-card:hover .movie-detail-cast-image img {
+  transform: scale(1.05);
+}
+
+.movie-detail-cast-info {
+  padding: 12px;
+}
+
+.movie-detail-cast-name {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 5px 0;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.movie-detail-cast-character {
+  font-size: 0.85rem;
+  color: #b3b3b3;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 로딩 및 에러 상태 */
+.movie-detail-cast-loading,
+.movie-detail-no-cast {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  text-align: center;
+  color: #e5e5e5;
+}
+
+.movie-detail-similar-section {
+  margin: 60px 0;
+  animation: fadeInUp 1s ease 0.8s forwards;
+  opacity: 0;
+  animation-fill-mode: both;
+}
+
+/* 이미 있는 slide-container 클래스의 너비를 조정 */
+.movie-detail-similar-section .slide-container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.movie-detail-trailer-section {
+  margin: 50px 0;
+  animation: fadeInUp 1s ease 0.4s forwards;
+  opacity: 0;
+  animation-fill-mode: both;
+}
+
+.movie-detail-trailer-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.movie-detail-trailer-card {
+  background-color: rgba(20, 20, 20, 0.7);
+  border-radius: 8px;
+  overflow: hidden;
+  box-sizing: 0 4px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.movie-detail-trailer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+.movie-detail-trailer-thumbnail {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+.movie-detail-trailer-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.movie-detail-play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background-color: rgba(229, 9, 20, 0.8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.movie-detail-trailer-card:hover .movie-detail-play-icon {
+  background-color: rgba(229, 9, 20, 1);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.movie-detail-trailer-info {
+  padding: 15px;
+}
+
+.movie-detail-trailer-name {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 5px 0;
+  color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.movie-detail-trailer-player {
+  position: relative;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.movie-detail-trailer-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.movie-detail-trailer-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.movie-detail-close-trailer {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+.movie-detail-close-trailer:hover {
+  background-color: #e50914;
+}
+
+.movie-detail-trailer-type {
+  font-size: 0.85rem;
+  color: #b3b3b3;
+  margin: 0;
+}
+
+/* 스크롤 진행 표시기 */
+.movie-detail-scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #e50914;
+  z-index: 1000;
+  transition: width 0.1s ease;
+}
+
+/* 애니메이션 효과 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* 반응형 스타일 */
+
+@media (max-width: 900px) {
+  .movie-detail-main {
+    grid-template-columns: 250px 1fr;
+    gap: 30px;
+  }
+
+  .movie-detail-info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .movie-detail-content {
+    padding: 50px 4% 40px;
+  }
+
+  .movie-detail-title {
+    font-size: 2rem;
+  }
+
+  .movie-detail-main {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .movie-detail-poster-container {
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  /* 데스크톱 오버뷰 숨기고 모바일 오버뷰 표시 */
+  .movie-detail-overview {
+    display: none;
+  }
+
+  .movie-detail-mobile-overview {
+    display: block;
+    margin-top: 20px;
+  }
+
+  .movie-detail-mobile-overview h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #fff;
+    border-left: 4px solid #e50914;
+    padding-left: 10px;
+  }
+
+  .movie-detail-cast-card {
+    width: 130px;
+  }
+
+  .movie-detail-cast-image {
+    height: 195px;
+  }
+
+  .movie-detail-section-title {
+    font-size: 1.5rem;
+  }
+
+  .movie-detail-similar-section {
+    margin: 40px 0;
+  }
+
+  .movie-detail-trailer-list {
+    grid-template-columns: 1fr;
+  }
+}

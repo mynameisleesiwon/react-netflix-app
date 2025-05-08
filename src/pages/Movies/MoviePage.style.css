@@ -1,0 +1,74 @@
+.movie-page {
+  min-height: 100vh;
+  padding: 80px 0;
+  background-color: #141414;
+}
+
+.movie-page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+
+.movie-page-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  animation: fadeInUp 0.6s ease forwards;
+}
+.movie-page-title::before {
+  content: '';
+  position: absolute;
+  left: -15px;
+  top: 10px;
+  height: 35px;
+  width: 5px;
+  background-color: #e50914;
+}
+.movie-page-title span {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+  .movie-page {
+    padding: 60px 0 40px;
+  }
+
+  .movie-page-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .movie-page-title::before {
+    height: 30px;
+    top: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-page-title {
+    font-size: 1.8rem;
+  }
+
+  .movie-page-title::before {
+    height: 25px;
+    top: 7px;
+  }
+}

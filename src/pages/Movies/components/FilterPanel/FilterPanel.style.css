@@ -1,0 +1,249 @@
+.filter-panel {
+  margin-bottom: 30px;
+  background-color: rgba(20, 20, 20, 0.7);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.filter-toggle-button {
+  width: 100%;
+  padding: 15px 20px;
+  background-color: rgba(30, 30, 30, 0.8);
+  color: white;
+  border: none;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.filter-toggle-button:hover {
+  background-color: rgba(50, 50, 50, 0.8);
+}
+
+.filter-icon {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.filter-options {
+  padding: 20px;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.filter-section {
+  margin-bottom: 20px;
+}
+
+.filter-section-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 12px;
+}
+.filter-section-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 4px;
+  height: 16px;
+  width: 3px;
+  background-color: #e50914;
+}
+
+.genre-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.genre-tag {
+  padding: 8px 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.genre-tag:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.genre-tag-selected {
+  background-color: #e50914;
+  color: white;
+}
+
+.genre-tag-selected:hover {
+  background-color: #b8070f;
+}
+
+.year-select,
+.sort-select {
+  width: 100%;
+  padding: 10px 15px;
+  background-color: rgba(50, 50, 50, 0.8);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  font-size: 0.95rem;
+  appearance: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+}
+.year-select:hover,
+.sort-select:hover {
+  background-color: rgba(60, 60, 60, 0.8);
+}
+
+.filter-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.filter-apply-button,
+.filter-reset-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-apply-button {
+  background-color: #e50914;
+  color: white;
+  flex: 3;
+}
+.filter-apply-button:hover {
+  background-color: #b8070f;
+}
+
+.filter-reset-button {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  flex: 1;
+}
+.filter-reset-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.active-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px 20px;
+  animation: fadeIn 0.3s ease;
+}
+
+.active-filter-tag {
+  display: flex;
+  align-items: center;
+  padding: 6px 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  align-items: baseline;
+}
+
+.remove-filter {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.2rem;
+  line-height: 0.5;
+  padding: 0 0 0 6px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.remove-filter:hover {
+  color: white;
+}
+
+.clear-all-filters {
+  background: none;
+  border: none;
+  color: #e50914;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 6px 10px;
+  transition: color 0.2s ease;
+}
+.clear-all-filters:hover {
+  color: #ff3040;
+  text-decoration: underline;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .filter-toggle-button {
+    padding: 12px 15px;
+    font-size: 1rem;
+  }
+
+  .filter-options {
+    padding: 15px;
+  }
+
+  .genre-tags {
+    gap: 8px;
+  }
+
+  .genre-tag {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+
+  .active-filters {
+    padding: 15px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .filter-section-title {
+    font-size: 0.95rem;
+  }
+
+  .genre-tag {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+  }
+
+  .year-select,
+  .sort-select {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+
+  .filter-apply-button,
+  .filter-reset-button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}

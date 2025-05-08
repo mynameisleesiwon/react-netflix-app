@@ -1,0 +1,196 @@
+.banner {
+  position: relative;
+  height: 80vh;
+  min-height: 500px;
+  color: white;
+  object-fit: contain;
+  background-size: 120% auto;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+.banner-contents {
+  padding: 5rem 5% 10rem 5%;
+  width: 50%;
+  z-index: 10;
+  position: relative;
+}
+
+.banner-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.banner-description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  height: max-content;
+  max-width: 500px;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.banner-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.banner-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.8rem 2rem;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.detail-button {
+  background-color: rgba(51, 51, 51, 0.7);
+  color: white;
+}
+
+.detail-button:hover {
+  background-color: rgba(51, 51, 51, 0.9);
+  transform: scale(1.05);
+}
+
+.banner-fadeBottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 15rem;
+  background-image: linear-gradient(
+    180deg,
+    transparent,
+    rgba(20, 20, 20, 0.7),
+    #141414
+  );
+}
+
+/* 예고편 관련 CSS 제거 */
+
+/* 배너 위에 어두운 오버레이 추가 */
+.banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  z-index: 1;
+}
+
+/* 로딩 상태 스켈레톤 */
+.banner-skeleton {
+  height: 80vh;
+  min-height: 500px;
+  width: 100%;
+  background: linear-gradient(
+    110deg,
+    #2b2b2b 30%,
+    #333 38%,
+    #333 40%,
+    #2b2b2b 48%
+  );
+  background-size: 200% 100%;
+  animation: shine 1.5s infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}
+
+/* 에러 상태 스타일 */
+.banner-error {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #141414;
+  color: #e50914;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 1024px) {
+  .banner-contents {
+    width: 70%;
+  }
+
+  .banner-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+    height: 60vh;
+    min-height: 400px;
+  }
+
+  .banner-contents {
+    width: 80%;
+    padding: 3rem 5% 7rem 5%;
+  }
+
+  .banner-title {
+    font-size: 2rem;
+  }
+
+  .banner-description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner {
+    height: 50vh;
+    min-height: 350px;
+  }
+
+  .banner-contents {
+    width: 100%;
+    padding: 2rem 5% 5rem 5%;
+  }
+
+  .banner-title {
+    font-size: 1.8rem;
+  }
+
+  .banner-description {
+    font-size: 0.9rem;
+    max-width: 100%;
+  }
+
+  .banner-button {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,123 @@
+/* NotFoundPage.css */
+.not-found-container {
+  min-height: 100vh;
+  background-color: #141414;
+  color: #fff;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.not-found-content {
+  max-width: 700px;
+  padding: 40px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.error-code {
+  font-size: 8rem;
+  font-weight: 700;
+  color: #e50914;
+  margin: 0;
+  line-height: 1.2;
+  text-shadow: 0 0 10px rgba(229, 9, 20, 0.4);
+}
+
+.error-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+}
+
+.error-message {
+  font-size: 1.2rem;
+  color: #e5e5e5;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.error-details {
+  color: #b3b3b3;
+  font-size: 0.9rem;
+  margin-bottom: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+}
+
+.error-highlight {
+  color: #e5e5e5;
+  font-family: monospace;
+  font-weight: 600;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.home-button {
+  background-color: #e50914;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.home-button:hover {
+  background-color: #f40612;
+}
+
+.help-link {
+  color: #e5e5e5;
+  text-decoration: underline;
+  padding: 12px 0;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.help-link:hover {
+  color: white;
+}
+
+/* 반응형 스타일링 */
+@media (max-width: 768px) {
+  .error-code {
+    font-size: 6rem;
+  }
+
+  .error-title {
+    font-size: 1.8rem;
+  }
+
+  .not-found-content {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .error-code {
+    font-size: 5rem;
+  }
+
+  .error-title {
+    font-size: 1.5rem;
+  }
+
+  .error-message {
+    font-size: 1rem;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
